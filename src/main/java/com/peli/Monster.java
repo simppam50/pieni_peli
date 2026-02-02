@@ -20,10 +20,10 @@ public class Monster implements Serializable {
     public boolean takeDamage(int damage) {
         health -= damage;
         if (health <= 0) {
-            System.out.println(type + " kuoli!");
+            System.out.println(type + " on kuollut!");
             return true;
         } else {
-            System.out.println(type + " hirviöllä on " + health + " elämää jäljellä.");
+            System.out.println("Hirviöllä on " + health + " elämää jäljellä.");
             return false;
         }
     }

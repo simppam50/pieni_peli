@@ -24,12 +24,12 @@ public class App {
 
     static void saveGame() {
         try {
-            System.out.println("Anna tiedoston nimi:");
+            System.out.println("Anna tiedoston nimi, johon peli tallentaa:");
             String filename = sc.nextLine();
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename));
             out.writeObject(cave);
             out.close();
-            System.out.println("Peli tallennettu tiedostoon " + filename);
+            System.out.println("Peli tallennettiin tiedostoon " + filename);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,7 +74,6 @@ public class App {
                     addMonster();
                     break;
                 case 2:
-                    System.out.println("Luolan hirviöt:");
                     cave.listMonsters();
                     break;
 
