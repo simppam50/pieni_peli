@@ -16,8 +16,8 @@ public class App {
     }
 
     static void attackMonster() {
+        System.out.println("Valitse hirviö, johon hyökätä:");
         cave.listMonsters();
-        System.out.println("Valitse hirviö, johon hyökätä");
         int index = Integer.parseInt(sc.nextLine()) -1;
         cave.attackMonster(index);
     }
@@ -42,7 +42,7 @@ public class App {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(filename));
             cave = (Cave) in.readObject();
             in.close();
-            System.out.println("Peli ladattu!");
+            System.out.println("Peli ladattu tiedostosta " + filename + "Tervetuloa takaisin, " + cave.player.name + ".");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,6 +74,7 @@ public class App {
                     addMonster();
                     break;
                 case 2:
+                    System.out.println("Luolan hirviöt:");
                     cave.listMonsters();
                     break;
 
