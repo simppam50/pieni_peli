@@ -22,12 +22,11 @@ public class Cave implements Serializable {
             System.out.println("Luola on tyhjä.");
             return;
         }
-        else
-        System.out.println("Luolan hirviöt:");
+        else {
         for (int i = 0; i < monsters.size(); i++) {
             monsters.get(i).printInfo(i);
         }
-        
+    }
     }
 
     public void attackMonster(int index) {

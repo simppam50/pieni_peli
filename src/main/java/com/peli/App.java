@@ -29,7 +29,7 @@ public class App {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename));
             out.writeObject(cave);
             out.close();
-            System.out.println("Peli tallennettiin tiedostoon " + filename);
+            System.out.println("Peli tallennettiin tiedostoon " + filename + ".");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -37,12 +37,12 @@ public class App {
 
     static void loadGame() {
         try {
-            System.out.println("Anna tiedoston nimi:");
+            System.out.println("Anna tiedoston nimi, josta peli ladataan:");
             String filename = sc.nextLine();
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(filename));
             cave = (Cave) in.readObject();
             in.close();
-            System.out.println("Peli ladattu tiedostosta " + filename + "Tervetuloa takaisin, " + cave.player.name + ".");
+            System.out.println("Peli ladattu tiedostosta " + filename + ". Tervetuloa takaisin, " + cave.player.name + ".");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,6 +74,11 @@ public class App {
                     addMonster();
                     break;
                 case 2:
+                    if (cave.monsters.isEmpty()) {
+                        cave.listMonsters();}
+                    else {
+                        System.out.println("Luolan hirviöt:");}
+                    
                     cave.listMonsters();
                     break;
 
