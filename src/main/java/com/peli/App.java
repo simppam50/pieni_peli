@@ -77,9 +77,8 @@ public class App {
                     if (cave.monsters.isEmpty()) {
                         cave.listMonsters();}
                     else {
-                        System.out.println("Luolan hirviöt:");}
-                    
-                    cave.listMonsters();
+                        System.out.println("Luolan hirviöt:");
+                        cave.listMonsters();}
                     break;
 
                 case 3:
