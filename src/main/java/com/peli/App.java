@@ -51,12 +51,9 @@ public class App {
     public static void main( String[] args ){
         sc = new Scanner(System.in);
 
-        Cave cave;
-
         System.out.println("Syötä pelaajan nimi:");
         Player player = new Player(sc.nextLine());
         cave = new Cave(player);
-        App.cave = cave;
 
         boolean exit = false;
         while(!exit){
